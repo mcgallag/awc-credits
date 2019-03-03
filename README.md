@@ -23,7 +23,7 @@ You can attempt it as a local file, but proper results are not guaranteed in thi
 4. Width should be the same as the width of your broadcast video (Likely 1280 or 1920)
 5. Height should be the same as the height of your broadcast video (Likely 720 or 1080)
 6. FPS should be the same as your broadcast framerate (Likely 30 or 60)
-7. Make sure that "Refresh browser when scene becomes active" is checked
+7. Make sure that both "Shutdown source when not visible" and "Refresh browser when scene becomes active" is checked
 
 At this point you can either run the scene on the fly during broadcast or record it to a video file for future use.
 
