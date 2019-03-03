@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>AWC Credits App</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      display: block;
+    }
+    .fullscreen-bg {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -100;
+    }
+    .fullscreen-bg__video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @media (min-aspect-ratio: 16/9) {
+      .fullscreen-bg__video {
+        width: 100%;
+        height: auto;
+      }
+    }
+    @media (max-aspect-ratio: 16/9) {
+      .fullscreen-bg__video {
+        width: auto;
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+<script src="pixi/pixi.js"></script>
+
+<body>
+  <div class="fullscreen-bg">
+    <video loop muted autoplay class="fullscreen-bg__video">
+      <source src="Assets/asteroids.mp4" type="video/mp4">
+    </video>
+  </div>
+  <script src="Content.js"></script>
+  <script src="credits.js"></script>
+  <script src="CreditsScene.js"></script>
+  <script src="TextRenderer.js"></script>
+</body>
+
+</html>
