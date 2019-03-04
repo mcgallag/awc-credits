@@ -17,7 +17,7 @@ class TextRenderer {
    * @param {string} glyph character to test.
    */
   IsValidChar(glyph) {
-    return /^[ A-Za-z\.]$/.test(glyph);
+    return /^[ A-Za-z\.,']$/.test(glyph);
   }
 
   /**
@@ -49,7 +49,7 @@ class TextRenderer {
    * @param {string} glyph character to test.
    */
   IsPunctuation(glyph) {
-    return (glyph == '.');
+    return /^[\.,']/.test(glyph);
   }
 
   /**
@@ -61,7 +61,14 @@ class TextRenderer {
     if (this.IsValidChar(glyph) == false) return TextRenderer.WHITESPACE;
     if (this.IsUpper(glyph)) return glyph + "_upper.png";
     if (this.IsLower(glyph)) return glyph + "_lower.png";
-    if (this.IsPunctuation(glyph)) return "Period.png";
+    if (this.IsPunctuation(glyph)) {
+      if (glyph == ".")
+        return "Period.png";
+      else if (glyph == ",")
+        return "Comma.png";
+      else if (glyph == "'")
+        return "Apostrophe.png";
+    }
 
     return TextRenderer.WHITESPACE;
   }
